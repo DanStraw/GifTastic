@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+    font-size: 35px;
+    font-style: bold;
+    padding-top: 5px;
+}
+
+button,
+    div,
+    form,
+    input {
+      margin: 10px;
+    }
