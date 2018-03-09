@@ -58,8 +58,6 @@ window.onload = function () {
     //on click function that changes data state of giphy from still to animated and back
     function changeDataState() {
         var state = $(this).attr("data-state");
-        console.log($(this).attr('data-state'))
- 
         if (state === 'still') {
             $(this).attr("src", $(this).data("animate"));
             $(this).attr('data-state', "animate");

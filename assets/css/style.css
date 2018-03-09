@@ -1,7 +1,6 @@
 body {
     background-image: url("../images/background.png")
 }
-
 h1 {
     text-align: center;
     font-size: 35px;
@@ -12,7 +11,6 @@ h1 {
 h3 {
     text-align: center;
 }
-
 button, div, form, input {
     margin: 10px;
 }
@@ -20,13 +18,11 @@ button, div, form, input {
     background-color: steelblue;
     color: whitesmoke;
 }
-
 .directions {
     border-bottom: 5px darkslategray ridge;
     padding-bottom: 10px;
     color: slategrey;
 }
-
 .topics {
     border-right: 2px darkslategray ridge;
     border-bottom: 2px slategray outset;
@@ -34,11 +30,9 @@ button, div, form, input {
     width: 25%;
     height: 100%;
 }
-
 .display-area {
     width: 100%;
 }
-
 .gif-Display {
     border: 1px seagreen dashed;
     position: relative;
