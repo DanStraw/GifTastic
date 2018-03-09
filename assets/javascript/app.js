@@ -16,9 +16,13 @@ window.onload = function () {
     function addTopicButton() {
         event.preventDefault();
         var topic = $('#topic-input').val().trim();
-        topics.push(topic);
-        renderTopicButtons();
-        $("#topic-input").val(" ");
+        if (topic === '') {
+            return false;
+        } else {
+            topics.push(topic);
+            renderTopicButtons();
+            $("#topic-input").val(" ");
+        }
     }
     //on click function that displays 10 gifs of the chosen topic button
     function displayTopicGifs() {

@@ -13,12 +13,13 @@ h3 {
     text-align: center;
 }
 
-button,
-    div,
-    form,
-    input {
-      margin: 10px;
-    }
+button, div, form, input {
+    margin: 10px;
+}
+#add-topic {
+    background-color: steelblue;
+    color: whitesmoke;
+}
 
 .directions {
     border-bottom: 5px darkslategray ridge;
