@@ -1,3 +1,7 @@
+body {
+    background-image: url("../images/background.png")
+}
+
 h1 {
     text-align: center;
     font-size: 35px;
@@ -19,11 +23,12 @@ button,
 .directions {
     border-bottom: 5px darkslategray ridge;
     padding-bottom: 10px;
+    color: slategrey;
 }
 
 .topics {
-    border-right: 2px blue outset;
-    border-bottom: 2px rgb(132, 132, 235) outset;
+    border-right: 2px darkslategray ridge;
+    border-bottom: 2px slategray outset;
     float: left;
     width: 25%;
     height: 100%;
@@ -38,4 +43,5 @@ button,
     position: relative;
     float: left;
     padding: 3px;
+    color: slategray;
 }
