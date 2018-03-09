@@ -5,9 +5,37 @@ h1 {
     padding-top: 5px;
 }
 
+h3 {
+    text-align: center;
+}
+
 button,
     div,
     form,
     input {
       margin: 10px;
     }
+
+.directions {
+    border-bottom: 5px darkslategray ridge;
+    padding-bottom: 10px;
+}
+
+.topics {
+    border-right: 2px blue outset;
+    border-bottom: 2px rgb(132, 132, 235) outset;
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+
+.display-area {
+    width: 100%;
+}
+
+.gif-Display {
+    border: 1px seagreen dashed;
+    position: relative;
+    float: left;
+    padding: 3px;
+}

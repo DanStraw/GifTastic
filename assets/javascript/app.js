@@ -1,6 +1,6 @@
 window.onload = function () {
-    var topics = ['Hockey', 'Game of Thrones', 'Winter Olympics', 'Play Station 4'];
-
+    var topics = ['Hockey', 'Game of Thrones', 'Winter Olympics', 'PS4'];
+    //renders the buttons onto the page. Runs on page load to render original topics array and whenever user clicks add a topic button
     function renderTopicButtons() {
         $("#topic-buttons").empty();
         topics.forEach(element => {
@@ -11,35 +11,61 @@ window.onload = function () {
             $('#topic-buttons').append(b);
         })
     }
-    renderTopicButtons();
-
-    $('#add-topic').on("click", function(event) {   
+    renderTopicButtons(); 
+    //on click function to add new topic button onto page
+    function addTopicButton() {
         event.preventDefault();
-        var topic = $('#topic-input').val();
-        console.log(topic);
+        var topic = $('#topic-input').val().trim();
         topics.push(topic);
         renderTopicButtons();
-    })
-
+        $("#topic-input").val(" ");
+    }
+    //on click function that displays 10 gifs of the chosen topic button
     function displayTopicGifs() {
-        $('.gif-display').empty();
+        $('.display-area').empty();
         var topic = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=WzbwbqfQttRx0QHozd4msZfKf8ijKE4E&q=" + topic + "&limit=10&lang=en";
-
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=WzbwbqfQttRx0QHozd4msZfKf8ijKE4E&q=" + topic + "&limit=10&offset=0&lang=en";
+        var test = "test";
         $.ajax({
             url: queryURL,
             method: 'GET',
         }).then(function(response) {
-            console.log(response);
-            // console.log(response.data);
             for (let i = 0; i < response.data.length; i++) {
-                var gif = response.data[i].images.downsized.url;
-                $('.gif-display').append('<img src=' + gif + ">");
-                $('.gif-display').prop('border', '2px black solid');
-            }   
-        })
+                //create a div for each gif. this will hold the gif and the rating
+                var gifDisplay = $('<div>')
+                gifDisplay.addClass("gif-Display");
+                var gif = $('<img>');
+                var stillState = response.data[i].images.fixed_width_still.url;
+                var animatedState = response.data[i].images.fixed_width.url;
+                gif.attr({
+                    "src": stillState,
+                    "data-still": stillState,
+                    "data-animate": animatedState,
+                    "data-state": "still",
+                });
+                gif.addClass('gif');
+                gifDisplay.append(gif);
+                var rating = $("<p>").text("Rating: " + response.data[i].rating.toUpperCase());
+                gifDisplay.append(rating);
+                $('.display-area').append(gifDisplay);   
+            }     
+        })  
     }
-
+    //on click function that changes data state of giphy from still to animated and back
+    function changeDataState() {
+        var state = $(this).attr("data-state");
+        console.log($(this).attr('data-state'))
+ 
+        if (state === 'still') {
+            $(this).attr("src", $(this).data("animate"));
+            $(this).attr('data-state', "animate");
+        } else if (state === 'animate') {
+            $(this).attr("src", $(this).data("still"));
+            $(this).attr('data-state', "still");
+        }
+    } 
+    $(document).on("click", ".gif", changeDataState); 
+    $(document).on("click", '#add-topic', addTopicButton);
     $(document).on("click", ".topic", displayTopicGifs);
 }
 

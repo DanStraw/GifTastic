@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <title>Giphy API</title>
 </head>
 <body>
-    <div><h1>Select any Gif topic you want to see</h1></div>
-    <hr>
-    <div id="topic-buttons"></div>
-    <hr>
-    <div>
-        <form id="topic-form">
-            <input id="add-topic" type="submit" value="Add a Topic">
-            <input type="text" id="topic-input">
-            <br>
-        </form>
+    <div class="directions"><h1>Select any Gif topic you want to see</h1>
+        <div>
+            <h3>You can select one of the buttons given or add your own topic. When you click a topic button, 
+            10 pictures will appear on the screen. Click the pictures to bring them to life!</h3>
+        </div>
     </div>
-    <hr>
-    <div class="gif-display"></div>
+        <div class="topics">
+            <form id="topic-form">
+                <input id="add-topic" type="submit" value="Add a Topic">
+                <input type="text" id="topic-input">
+                <br>
+            </form>
+
+            <div id="topic-buttons"></div>
+        </div>
+        <div class="display-area"></div>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
