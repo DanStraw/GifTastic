@@ -1,5 +1,5 @@
 window.onload = function () {
-    var topics = ['Hockey', 'Game of Thrones', 'Winter Olympics', 'PS4'];
+    var topics = ['Hockey', 'Game of Thrones', 'PS4', 'Winter Olympics', 'cars', 'dogs'];
     //renders the buttons onto the page. Runs on page load to render original topics array and whenever user clicks add a topic button
     function renderTopicButtons() {
         $("#topic-buttons").empty();
