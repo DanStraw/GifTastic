@@ -18,6 +18,9 @@ window.onload = function () {
         var topic = $('#topic-input').val().trim();
         if (topic === '') {
             return false;
+        } else if (topics.indexOf(topic) > -1) {
+            $("#topic-input").val(" ");
+            return false;
         } else {
             topics.push(topic);
             renderTopicButtons();
@@ -39,7 +42,6 @@ window.onload = function () {
                 var gifDisplay = $('<div>')
                 gifDisplay.addClass("gif-Display");
                 var gif = $('<img>');
-                console.log(response);
                 var stillState = response.data[i].images.fixed_height_still.url;
                 var animatedState = response.data[i].images.fixed_height.url;
                 gif.attr({
