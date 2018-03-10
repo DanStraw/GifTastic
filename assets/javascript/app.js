@@ -39,8 +39,9 @@ window.onload = function () {
                 var gifDisplay = $('<div>')
                 gifDisplay.addClass("gif-Display");
                 var gif = $('<img>');
-                var stillState = response.data[i].images.fixed_width_still.url;
-                var animatedState = response.data[i].images.fixed_width.url;
+                console.log(response);
+                var stillState = response.data[i].images.fixed_height_still.url;
+                var animatedState = response.data[i].images.fixed_height.url;
                 gif.attr({
                     "src": stillState,
                     "data-still": stillState,
