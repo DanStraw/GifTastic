@@ -49,3 +49,13 @@ button, div, form, input {
         width: 90%;
     }
 }
+
+@media screen and (max-width: 980px) {
+    .topics {
+        width: 97%;
+        border-right: none;
+    }
+    #topic-input {
+        width: 35%;
+    }
+}
