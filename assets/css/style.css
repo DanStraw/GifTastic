@@ -45,4 +45,7 @@ button, div, form, input {
     .topics {
         width: 245px;
     }
+    #topic-input {
+        width: 90%;
+    }
 }
