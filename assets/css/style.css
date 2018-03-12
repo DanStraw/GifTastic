@@ -40,3 +40,9 @@ button, div, form, input {
     padding: 3px;
     color: slategray;
 }
+
+@media screen and (max-width: 980px) {
+    .topics {
+        width: 245px;
+    }
+}
